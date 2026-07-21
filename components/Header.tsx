@@ -77,16 +77,17 @@ export default function Header() {
             </a>
 
             <button
-              className="lg:hidden w-10 h-10 sm:w-11 sm:h-11 flex items-center justify-center rounded-xl"
-              style={{ border: "1px solid var(--border)" }}
+              className="lg:hidden flex items-center gap-1.5 pl-3 pr-3.5 h-10 sm:h-11 rounded-xl font-medium text-sm btn-press"
+              style={{ background: "var(--bg2)", border: "1px solid var(--border)" }}
               aria-label={menuOpen ? "Закрити меню" : "Відкрити меню"}
               aria-expanded={menuOpen}
               aria-controls="mobile-menu"
               onClick={() => setMenuOpen((v) => !v)}
             >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
                 {menuOpen ? <path d="M6 6l12 12M18 6 6 18" /> : <path d="M4 7h16M4 12h16M4 17h16" />}
               </svg>
+              <span>{menuOpen ? "Закрити" : "Меню"}</span>
             </button>
           </div>
         </div>

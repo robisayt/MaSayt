@@ -3,8 +3,9 @@ import Reveal from "./Reveal";
 
 export default function Faq() {
   return (
-    <section id="faq" className="py-14 sm:py-24 md:py-32">
-      <div className="max-w-4xl mx-auto px-5 md:px-8">
+    <section id="faq" className="relative py-14 sm:py-24 md:py-32 overflow-hidden">
+      <div className="blob w-72 h-72 -top-10 -left-16" style={{ background: "var(--accent)", opacity: 0.1 }} />
+      <div className="max-w-4xl mx-auto px-5 md:px-8 relative">
         <Reveal className="max-w-2xl mb-10 sm:mb-14">
           <p className="font-mono text-sm mb-3" style={{ color: "var(--accent)" }}>// питання</p>
           <h2 className="font-display font-bold text-[1.7rem] sm:text-3xl md:text-[2.6rem] tracking-tight mb-4">

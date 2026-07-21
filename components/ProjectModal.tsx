@@ -132,7 +132,7 @@ export default function ProjectModal({
             <>
               <DeviceMock project={project} tab={tab} />
               <p className="text-center text-xs mt-6" style={{ color: "var(--text-soft)" }}>
-                Демонстраційний макет проєкту — замініть на реальні знімки екрана.
+                Демонстраційний макет проєкту.
               </p>
             </>
           )}

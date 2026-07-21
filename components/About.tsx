@@ -4,17 +4,19 @@ import Counter from "./Counter";
 
 export default function About() {
   return (
-    <section id="about" className="py-14 sm:py-24 md:py-32">
-      <div className="max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-2 gap-10 sm:gap-16 items-center">
+    <section id="about" className="relative py-14 sm:py-24 md:py-32 overflow-hidden">
+      <div className="blob w-96 h-96 top-1/3 -right-32" style={{ background: "var(--accent-light)", opacity: 0.14 }} />
+
+      <div className="max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-2 gap-10 sm:gap-16 items-center relative">
         <Reveal scale className="order-2 lg:order-1">
           <div className="relative max-w-sm mx-auto">
-            <div className="relative w-full aspect-[4/5] rounded-3xl overflow-hidden" style={{ boxShadow: "var(--shadow)" }}>
+            <div className="relative w-full aspect-[3/4] rounded-3xl overflow-hidden" style={{ boxShadow: "var(--shadow)" }}>
               <Image
                 src="/about-photo.jpg"
                 alt="Андрій Мастеров"
                 fill
                 sizes="(max-width: 1024px) 384px, 400px"
-                className="object-cover"
+                className="object-cover object-top"
               />
             </div>
             <div className="absolute -bottom-6 -right-4 card rounded-2xl px-5 py-4 shadow-lg flex items-center gap-2.5">
