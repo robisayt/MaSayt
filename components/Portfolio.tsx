@@ -77,12 +77,12 @@ export default function Portfolio() {
   ));
 
   return (
-    <section id="portfolio" className="py-14 sm:py-24 md:py-32" style={{ background: "var(--bg2)" }}>
+    <section id="portfolio" className="py-14 sm:py-24 md:py-32" style={{ background: "var(--tint)" }}>
       <div className="max-w-7xl mx-auto px-5 md:px-8">
         <Reveal className="max-w-2xl mb-10 sm:mb-16">
           <p className="font-mono text-sm mb-3" style={{ color: "var(--accent)" }}>// портфоліо</p>
           <h2 className="font-display font-bold text-[1.7rem] sm:text-3xl md:text-[2.8rem] tracking-tight mb-4">
-            Роботи, якими я пишаюся
+            Роботи, якими ми пишаємося
           </h2>
           <p className="text-lg" style={{ color: "var(--text-soft)" }}>
             Кожен проєкт — окрема задача бізнесу: від першого ескізу до готового сайту. Натисніть на проєкт, щоб

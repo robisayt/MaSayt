@@ -19,7 +19,7 @@ export default function Footer() {
               <span className="font-display font-bold text-[17px] tracking-tight">MaSayt</span>
             </a>
             <p className="text-sm max-w-xs" style={{ color: "var(--text-soft)" }}>
-              Веб-дизайнер і frontend-розробник. Створюю сучасні сайти, які допомагають бізнесу зростати.
+              Команда веб-дизайну та розробки. Створюємо сучасні сайти, які допомагають бізнесу зростати.
             </p>
           </div>
 
@@ -39,7 +39,7 @@ export default function Footer() {
           className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs"
           style={{ borderTop: "1px solid var(--border)", color: "var(--text-soft)" }}
         >
-          <p>© {year} Андрій Мастеров. Усі права захищено.</p>
+          <p>© {year} MaSayt. Усі права захищено.</p>
           <p className="font-mono">Дизайн і розробка сайтів</p>
         </div>
       </div>

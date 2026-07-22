@@ -11,12 +11,12 @@ export default function Hero() {
         <div>
           <Reveal className="font-mono text-sm mb-4 sm:mb-5 flex items-center gap-2" style={{ color: "var(--accent)" }}>
             <span className="w-2 h-2 rounded-full" style={{ background: "var(--accent)" }} />
-            {"// веб-дизайнер & розробник сайтів"}
+            {"// команда веб-дизайну та розробки"}
           </Reveal>
 
           <Reveal>
             <h1 className="font-display font-bold text-[2rem] leading-[1.15] sm:text-5xl md:text-[3.4rem] md:leading-[1.08] tracking-tight mb-5 sm:mb-6">
-              Створюю сучасні сайти,<br className="hidden sm:block" /> які допомагають{" "}
+              Створюємо сучасні сайти,<br className="hidden sm:block" /> які допомагають{" "}
               <span style={{ color: "var(--accent)" }}>бізнесу зростати</span>
             </h1>
           </Reveal>
@@ -25,7 +25,7 @@ export default function Hero() {
             className="text-base sm:text-lg leading-relaxed max-w-xl mb-7 sm:mb-9"
             style={{ color: "var(--text-soft)" }}
           >
-            Розробляю швидкі, адаптивні та естетичні сайти — від лендінгу до інтернет-магазину. Поєдную чистий код із
+            Розробляємо швидкі, адаптивні та естетичні сайти — від лендінгу до інтернет-магазину. Поєднуємо чистий код із
             дизайном, який викликає довіру з першого погляду.
           </Reveal>
 

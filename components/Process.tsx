@@ -21,10 +21,8 @@ export default function Process() {
   ));
 
   return (
-    <section id="process" className="relative py-14 sm:py-24 md:py-32 overflow-hidden">
-      <div className="shape-outline w-24 h-24 rounded-3xl top-10 right-[8%] hidden md:block" />
-
-      <div className="max-w-7xl mx-auto px-5 md:px-8 relative">
+    <section id="process" className="py-14 sm:py-24 md:py-32">
+      <div className="max-w-7xl mx-auto px-5 md:px-8">
         <Reveal className="max-w-2xl mb-12 sm:mb-20">
           <p className="font-mono text-sm mb-3" style={{ color: "var(--accent)" }}>// етапи роботи</p>
           <h2 className="font-display font-bold text-[1.7rem] sm:text-3xl md:text-[2.6rem] tracking-tight mb-4">

@@ -7,7 +7,7 @@ const NAV_LINKS = [
   { href: "#home", label: "Головна" },
   { href: "#portfolio", label: "Портфоліо" },
   { href: "#services", label: "Послуги" },
-  { href: "#about", label: "Про мене" },
+  { href: "#about", label: "Про нас" },
   { href: "#testimonials", label: "Відгуки" },
   { href: "#contact", label: "Контакти" },
 ];

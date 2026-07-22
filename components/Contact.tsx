@@ -50,16 +50,15 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="relative py-14 sm:py-24 md:py-32 overflow-hidden" style={{ background: "var(--bg2)" }}>
-      <div className="blob w-80 h-80 -bottom-28 -right-20" style={{ background: "var(--accent-light)", opacity: 0.14 }} />
-      <div className="max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-2 gap-10 sm:gap-16 relative">
+    <section id="contact" className="py-14 sm:py-24 md:py-32" style={{ background: "var(--tint)" }}>
+      <div className="max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-2 gap-10 sm:gap-16">
         <Reveal>
           <p className="font-mono text-sm mb-3" style={{ color: "var(--accent)" }}>// контакти</p>
           <h2 className="font-display font-bold text-[1.7rem] sm:text-3xl md:text-[2.6rem] tracking-tight mb-5">
             Обговоримо ваш проєкт?
           </h2>
           <p className="text-lg leading-relaxed mb-10 max-w-md" style={{ color: "var(--text-soft)" }}>
-            Розкажіть коротко про вашу ідею — і я відповім протягом одного робочого дня з планом та орієнтовним
+            Розкажіть коротко про вашу ідею — і ми відповімо протягом одного робочого дня з планом та орієнтовним
             терміном.
           </p>
           <SocialLinks />

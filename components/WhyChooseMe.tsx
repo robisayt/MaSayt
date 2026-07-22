@@ -23,14 +23,12 @@ export default function WhyChooseMe() {
   });
 
   return (
-    <section className="relative py-14 sm:py-24 md:py-32 overflow-hidden" style={{ background: "var(--bg2)" }}>
-      <div className="blob w-80 h-80 -bottom-24 -left-24" style={{ background: "var(--accent)", opacity: 0.12 }} />
-
-      <div className="max-w-7xl mx-auto px-5 md:px-8 relative">
+    <section className="py-14 sm:py-24 md:py-32" style={{ background: "var(--tint)" }}>
+      <div className="max-w-7xl mx-auto px-5 md:px-8">
         <Reveal className="max-w-2xl mb-10 sm:mb-16">
           <p className="font-mono text-sm mb-3" style={{ color: "var(--accent)" }}>// переваги</p>
           <h2 className="font-display font-bold text-[1.7rem] sm:text-3xl md:text-[2.6rem] tracking-tight mb-4">
-            Чому обирають мене
+            Чому обирають нас
           </h2>
         </Reveal>
 

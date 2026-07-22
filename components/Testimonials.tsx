@@ -11,7 +11,7 @@ function Star({ i }: { i: number }) {
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="py-14 sm:py-24 md:py-32" style={{ background: "var(--bg2)" }}>
+    <section id="testimonials" className="py-14 sm:py-24 md:py-32" style={{ background: "var(--tint)" }}>
       <div className="max-w-7xl mx-auto px-5 md:px-8">
         <Reveal className="max-w-2xl mb-10 sm:mb-16">
           <p className="font-mono text-sm mb-3" style={{ color: "var(--accent)" }}>// відгук</p>

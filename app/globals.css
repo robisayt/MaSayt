@@ -26,6 +26,7 @@
 :root {
   --bg: #FFFFFF;
   --bg2: #F7F7F7;
+  --tint: rgba(37, 99, 235, .035);
   --text: #222222;
   --text-soft: #5B6470;
   --border: #ECECEC;
@@ -38,6 +39,7 @@
 .dark {
   --bg: #0B0F17;
   --bg2: #10141F;
+  --tint: rgba(59, 130, 246, .07);
   --text: #ECEEF1;
   --text-soft: #94A0B4;
   --border: #232A3A;
@@ -160,6 +162,13 @@ body.has-custom-cursor, body.has-custom-cursor a, body.has-custom-cursor button 
   0%, 100% { transform: translateY(0) rotate(0deg); }
   50% { transform: translateY(-16px) rotate(12deg); }
 }
+.dot-grid {
+  position: absolute;
+  background-image: radial-gradient(var(--accent-light) 1.5px, transparent 1.5px);
+  background-size: 24px 24px;
+  -webkit-mask-image: radial-gradient(circle, black, transparent 75%);
+  mask-image: radial-gradient(circle, black, transparent 75%);
+}
 
 .browser-card { border-radius: 1.25rem; border: 1px solid var(--border); background: var(--card); box-shadow: var(--shadow); }
 .traffic-dot { width: 9px; height: 9px; border-radius: 50%; }
@@ -183,6 +192,7 @@ body.has-custom-cursor, body.has-custom-cursor a, body.has-custom-cursor button 
 /* ---------- Cards ---------- */
 .card {
   background: var(--card); border: 1px solid var(--border);
+  box-shadow: 0 1px 2px rgba(16, 24, 40, .04), 0 10px 28px -16px rgba(37, 99, 235, .12);
   transition: transform .35s cubic-bezier(.2, .7, .2, 1), box-shadow .35s ease, border-color .35s ease;
 }
 .card:hover { transform: translateY(-6px); box-shadow: var(--shadow); border-color: var(--accent-light); }
