@@ -53,7 +53,7 @@ export default function Contact() {
     <section id="contact" className="py-14 sm:py-24 md:py-32" style={{ background: "var(--tint)" }}>
       <div className="max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-2 gap-10 sm:gap-16">
         <Reveal>
-          <p className="font-mono text-sm mb-3" style={{ color: "var(--accent)" }}>// контакти</p>
+          <span className="eyebrow">Контакти</span>
           <h2 className="font-display font-bold text-[1.7rem] sm:text-3xl md:text-[2.6rem] tracking-tight mb-5">
             Обговоримо ваш проєкт?
           </h2>

@@ -99,6 +99,23 @@ export default function ProjectModal({
               <p className="text-sm mb-6" style={{ color: "var(--text-soft)" }}>
                 {project.desc}
               </p>
+
+              <div className="rounded-2xl p-5 mb-6" style={{ background: "var(--tint)", border: "1px solid var(--border)" }}>
+                <p className="font-mono text-xs mb-2" style={{ color: "var(--accent)" }}>РОЛЬ MASAYT</p>
+                <p className="text-sm font-medium mb-4">{project.role}</p>
+                <p className="font-mono text-xs mb-2.5" style={{ color: "var(--accent)" }}>ЩО БУЛО ЗРОБЛЕНО</p>
+                <ul className="grid sm:grid-cols-2 gap-x-5 gap-y-2">
+                  {project.work.map((w) => (
+                    <li key={w} className="flex items-start gap-2 text-sm" style={{ color: "var(--text-soft)" }}>
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" className="mt-0.5 shrink-0">
+                        <path d="M20 6 9 17l-5-5" />
+                      </svg>
+                      {w}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
               <div className="grid sm:grid-cols-2 gap-6 mb-6">
                 <div>
                   <p className="font-mono text-xs mb-2" style={{ color: "var(--accent)" }}>ЗАВДАННЯ</p>

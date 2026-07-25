@@ -27,6 +27,8 @@
   --bg: #FFFFFF;
   --bg2: #F7F7F7;
   --tint: rgba(37, 99, 235, .035);
+  --glass: rgba(255, 255, 255, .72);
+  --glass-border: rgba(15, 23, 42, .07);
   --text: #222222;
   --text-soft: #5B6470;
   --border: #ECECEC;
@@ -40,6 +42,8 @@
   --bg: #0B0F17;
   --bg2: #10141F;
   --tint: rgba(59, 130, 246, .07);
+  --glass: rgba(19, 24, 38, .66);
+  --glass-border: rgba(255, 255, 255, .08);
   --text: #ECEEF1;
   --text-soft: #94A0B4;
   --border: #232A3A;
@@ -120,17 +124,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .cursor-ring.is-active { width: 56px; height: 56px; border-color: var(--accent); background: rgba(96, 165, 250, .08); }
 body.has-custom-cursor, body.has-custom-cursor a, body.has-custom-cursor button { cursor: none; }
 
-/* ---------- Reveal on scroll ---------- */
-.reveal {
-  opacity: 0; transform: translateY(28px);
-  transition: opacity .7s cubic-bezier(.2, .7, .2, 1), transform .7s cubic-bezier(.2, .7, .2, 1);
-}
-.reveal.in-view { opacity: 1; transform: translateY(0); }
-.reveal-scale {
-  opacity: 0; transform: scale(.94);
-  transition: opacity .7s ease, transform .7s cubic-bezier(.2, .7, .2, 1);
-}
-.reveal-scale.in-view { opacity: 1; transform: scale(1); }
+/* Scroll entrance is handled by components/Reveal.tsx (Framer Motion). */
 
 @media (prefers-reduced-motion: reduce) {
   * {
@@ -139,16 +133,6 @@ body.has-custom-cursor, body.has-custom-cursor a, body.has-custom-cursor button 
     transition-duration: .001ms !important;
     scroll-behavior: auto !important;
   }
-  .reveal, .reveal-scale { opacity: 1 !important; transform: none !important; }
-}
-
-/* ---------- Header ---------- */
-#site-header { transition: background-color .35s ease, box-shadow .35s ease, backdrop-filter .35s ease, border-color .35s ease; }
-#site-header.scrolled {
-  background: var(--overlay);
-  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
-  box-shadow: 0 8px 30px -12px rgba(0, 0, 0, .12);
-  border-bottom: 1px solid var(--border);
 }
 
 /* ---------- Hero mockup (signature element) ---------- */
@@ -168,6 +152,81 @@ body.has-custom-cursor, body.has-custom-cursor a, body.has-custom-cursor button 
   background-size: 24px 24px;
   -webkit-mask-image: radial-gradient(circle, black, transparent 75%);
   mask-image: radial-gradient(circle, black, transparent 75%);
+}
+
+/* ---------- Premium surface language ---------- */
+
+/* Fine film grain over the whole page — adds depth so flat areas never read as "empty". */
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: .035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.dark .grain::after { opacity: .06; }
+
+/* Frosted glass surface used by the floating nav and accent panels. */
+.glass {
+  background: var(--glass);
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  border: 1px solid var(--glass-border);
+}
+
+/* Large display type with a subtle gradient — used sparingly, on key words only. */
+.text-gradient {
+  background: linear-gradient(115deg, var(--accent) 10%, var(--accent-light) 55%, var(--accent) 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Small caps label that opens each section. */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  font-family: var(--font-mono), monospace;
+  font-size: .75rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  padding: .4rem .8rem .4rem .6rem;
+  border-radius: 99px;
+  background: var(--tint);
+  border: 1px solid var(--glass-border);
+}
+.eyebrow::before {
+  content: "";
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 18%, transparent);
+}
+
+/* Hairline divider that fades out at both ends. */
+.hairline {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border) 18%, var(--border) 82%, transparent);
+}
+
+/* Gradient border wrapper for premium accent panels. */
+.gradient-ring {
+  position: relative;
+  border-radius: 1.75rem;
+}
+.gradient-ring::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(140deg, color-mix(in srgb, var(--accent) 45%, transparent), transparent 45%, color-mix(in srgb, var(--accent-light) 40%, transparent));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
 }
 
 .browser-card { border-radius: 1.25rem; border: 1px solid var(--border); background: var(--card); box-shadow: var(--shadow); }

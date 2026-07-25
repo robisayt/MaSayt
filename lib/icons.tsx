@@ -98,6 +98,19 @@ export const ICONS: Record<IconKey, () => ReactElement> = {
       <path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18" />
     </svg>
   ),
+  sparkle: () => (
+    <svg width={base} height={base} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinejoin="round">
+      <path d="M12 3l1.9 5.6L19.5 10.5l-5.6 1.9L12 18l-1.9-5.6L4.5 10.5l5.6-1.9z" />
+      <path d="M18.5 3.5v3M20 5h-3" />
+    </svg>
+  ),
+  coffee: () => (
+    <svg width={base} height={base} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+      <path d="M4 9h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z" />
+      <path d="M17 10.5h1.6a2.4 2.4 0 0 1 0 4.8H17" />
+      <path d="M8 3v2.5M12 3v2.5" />
+    </svg>
+  ),
 };
 
 export function TelegramIcon() {

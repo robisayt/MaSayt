@@ -63,10 +63,10 @@ export default function AboutUs() {
         </Reveal>
 
         <div className="order-1 lg:order-2">
-          <Reveal className="font-mono text-sm mb-3" style={{ color: "var(--accent)" }}>// про нас</Reveal>
+          <Reveal><span className="eyebrow">Хто ми</span></Reveal>
           <Reveal>
-            <h2 className="font-display font-bold text-[1.7rem] sm:text-3xl md:text-[2.6rem] tracking-tight mb-5">
-              Про нас
+            <h2 className="font-display font-bold text-[1.7rem] sm:text-3xl md:text-[2.6rem] tracking-tight mt-6 mb-5">
+              Команда, яка робить сайти,<br className="hidden sm:block" /> що приємно показувати
             </h2>
           </Reveal>
           <Reveal className="text-lg leading-relaxed mb-6" style={{ color: "var(--text-soft)" }}>

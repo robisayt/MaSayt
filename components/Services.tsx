@@ -8,15 +8,31 @@ export default function Services() {
     const Icon = ICONS[service.icon];
     return (
       <Reveal key={service.title} delay={(i % 3) * 90}>
-        <div className="card rounded-2xl p-6 h-full">
-          <div
-            className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
-            style={{ background: "var(--bg2)", color: "var(--accent)" }}
-          >
-            <Icon />
+        <div className="card group relative h-full rounded-2xl p-6 sm:p-7 overflow-hidden">
+          <span
+            className="pointer-events-none absolute -right-6 -bottom-6 w-24 h-24 rounded-full blur-2xl opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+            style={{ background: "var(--accent-light)" }}
+            aria-hidden="true"
+          />
+          <div className="relative">
+            <div className="flex items-start justify-between gap-3 mb-5">
+              <span
+                className="w-12 h-12 rounded-xl flex items-center justify-center transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-3"
+                style={{ background: "var(--tint)", color: "var(--accent)", border: "1px solid var(--glass-border)" }}
+              >
+                <Icon />
+              </span>
+              <span className="font-mono text-[11px] tabular-nums pt-1" style={{ color: "var(--text-soft)" }}>
+                {String(i + 1).padStart(2, "0")}
+              </span>
+            </div>
+            <h3 className="font-display font-semibold text-lg mb-2">{service.title}</h3>
+            <p className="text-sm leading-relaxed" style={{ color: "var(--text-soft)" }}>{service.desc}</p>
           </div>
-          <h3 className="font-display font-semibold text-lg mb-2">{service.title}</h3>
-          <p className="text-sm" style={{ color: "var(--text-soft)" }}>{service.desc}</p>
+          <span
+            className="absolute left-0 bottom-0 h-px w-full origin-left scale-x-0 transition-transform duration-500 group-hover:scale-x-100"
+            style={{ background: "linear-gradient(90deg, var(--accent), transparent)" }}
+          />
         </div>
       </Reveal>
     );
@@ -26,12 +42,12 @@ export default function Services() {
     <section id="services" className="py-14 sm:py-24 md:py-32">
       <div className="max-w-7xl mx-auto px-5 md:px-8">
         <Reveal className="max-w-2xl mb-10 sm:mb-16">
-          <p className="font-mono text-sm mb-3" style={{ color: "var(--accent)" }}>// послуги</p>
+          <span className="eyebrow">Напрямки</span>
           <h2 className="font-display font-bold text-[1.7rem] sm:text-3xl md:text-[2.6rem] tracking-tight mb-4">
-            Чим можемо допомогти
+            Що ми робимо
           </h2>
           <p className="text-lg" style={{ color: "var(--text-soft)" }}>
-            Повний цикл створення сайту — від ідеї та дизайну до запуску й підтримки.
+            Шість напрямків, у яких ми сильні. Кожен проєкт ведемо від структури до запуску.
           </p>
         </Reveal>
 

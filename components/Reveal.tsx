@@ -1,7 +1,16 @@
 "use client";
 
-import { useEffect, useRef, useState, type ReactNode, type CSSProperties } from "react";
+import { motion, useReducedMotion } from "framer-motion";
+import type { ReactNode, CSSProperties } from "react";
 
+/**
+ * Scroll-entrance primitive used across the whole site.
+ *
+ * The public API is intentionally tiny (children / className / scale / delay /
+ * style) so every section stays readable — swap the engine here and the whole
+ * site follows. Honours prefers-reduced-motion: the content still appears,
+ * just without travel.
+ */
 export default function Reveal({
   children,
   className = "",
@@ -15,32 +24,28 @@ export default function Reveal({
   delay?: number;
   style?: CSSProperties;
 }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
+  const reduce = useReducedMotion();
 
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true);
-          observer.unobserve(el);
-        }
-      },
-      { threshold: 0.15 }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
+  const hidden = reduce
+    ? { opacity: 0 }
+    : scale
+      ? { opacity: 0, scale: 0.94 }
+      : { opacity: 0, y: 28 };
 
   return (
-    <div
-      ref={ref}
-      className={`${scale ? "reveal-scale" : "reveal"} ${visible ? "in-view" : ""} ${className}`}
-      style={{ transitionDelay: `${delay}ms`, ...style }}
+    <motion.div
+      className={className}
+      style={style}
+      initial={hidden}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      viewport={{ once: true, amount: 0.15 }}
+      transition={{
+        duration: reduce ? 0.25 : 0.7,
+        delay: delay / 1000,
+        ease: [0.2, 0.7, 0.2, 1],
+      }}
     >
       {children}
-    </div>
+    </motion.div>
   );
 }

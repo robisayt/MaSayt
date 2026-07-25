@@ -12,12 +12,13 @@ import AboutUs from "@/components/AboutUs";
 import TechStack from "@/components/TechStack";
 import Faq from "@/components/Faq";
 import Contact from "@/components/Contact";
+import CtaBanner from "@/components/CtaBanner";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
 
 export default function Home() {
   return (
-    <div className="relative overflow-x-clip">
+    <div className="grain relative overflow-x-clip">
       {/* One continuous decorative layer behind the whole page — see components/BackgroundDecor.tsx */}
       <BackgroundDecor />
 
@@ -38,6 +39,7 @@ export default function Home() {
         <TechStack />
         <Faq />
         <Contact />
+        <CtaBanner />
       </main>
 
       <Footer />

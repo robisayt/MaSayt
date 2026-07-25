@@ -6,7 +6,7 @@ export default function Faq() {
     <section id="faq" className="py-14 sm:py-24 md:py-32">
       <div className="max-w-4xl mx-auto px-5 md:px-8">
         <Reveal className="max-w-2xl mb-10 sm:mb-14">
-          <p className="font-mono text-sm mb-3" style={{ color: "var(--accent)" }}>// питання</p>
+          <span className="eyebrow">Питання</span>
           <h2 className="font-display font-bold text-[1.7rem] sm:text-3xl md:text-[2.6rem] tracking-tight mb-4">
             Часті запитання
           </h2>
